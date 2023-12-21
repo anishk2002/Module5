@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Menu</title>
+<style>
+.tiles {
+  display: flex;
+}
+
+.tile {
+  width: 100px;
+  height: 100px;
+  margin: 10px;
+  background-color: lightblue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+
+</style>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const categories = ['Lunch', 'Dinner', 'Sushi', 'Drinks', 'Desserts', 'Appetizers'];
+
+  const specialsTile = document.getElementById('specials');
+  specialsTile.addEventListener('click', redirectToRandomCategory);
+
+  function redirectToRandomCategory() {
+    const randomCategory = categories[Math.floor(Math.random() * categories.length)];
+    console.log(`Redirecting to ${randomCategory} category page`);
+ 
+  }
+});
+
+</script>
+</head>
+<body>
+  <div class="tiles">
+    <div class="tile" id="menu">Menu</div>
+    <div class="tile" id="specials">Specials</div>
+    <div class="tile" id="map">Map</div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
